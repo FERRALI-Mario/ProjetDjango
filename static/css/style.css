@@ -1,0 +1,16 @@
+a, a:hover {
+    text-decoration: none!important;
+}
+textarea {
+    resize: none;
+}
+.filter {
+    width: 100px;
+}
+.bg-color {
+    background: #f7f7f7;
+    box-shadow: 0px 2px 2px rgb(0 0 0 / 30%);
+}
+.form-add, .form-detail {
+    width: 340px;
+}

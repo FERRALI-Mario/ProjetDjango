@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Publication
+{% endblock %}
+
+{% block content %}
+    <h1 class="d-flex justify-content-center">Détails de la publication</h1>
+
+    <section class="bg-color col-md-4 m-auto my-3 p-3">
+        <h2 class="d-flex justify-content-center">{{ post.title }}</h2>
+        <ul>
+            <li>{{ post.author }}</li>
+            <li>{{ post.date_creation }}</li>
+        </ul>
+        <p>{{ post.content }}</p>
+        <a class="filter btn btn-primary" href="../">Retour</a>
+    </section>
+
+    <section class="d-grid justify-content-center">
+        <h2 class="d-flex justify-content-center">Commentaires : {{ comments.count }}</h2>
+        {% for comment in comments %}
+            <ul class="bg-color list-unstyled m-3 p-3">
+                <li>Auteur : {{ comment.author }}</li>
+                <li>Date : {{ comment.date_published }}</li>
+                <li>Commentaire : {{ comment.content }}</li>
+            </ul>
+        {% endfor %}
+    </section>
+
+    {% if user.is_authenticated %}
+        <section class="d-grid justify-content-center">
+            <h2>Ajouter un commentaire</h2>
+            <form action="" method="post" class="d-grid justify-content-center">
+                {{ comment_form.as_p }}
+                {% csrf_token %}
+                <button type="submit" class="filter btn btn-primary mb-5">Envoyer</button>
+            </form>
+        </section>
+    {% else %}
+        <p class="d-flex justify-content-center">Connectez-vous pour ajouter un commentaire</p>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,12 @@
+<header class="d-flex justify-content-center align-items-center m-3">
+    <nav class="d-flex">
+        <li class="list-unstyled mx-3"><a class="text-dark" href="{% url 'post_list' %}">Accueil</a></li>
+        {% if user.is_authenticated %}
+            <li class="list-unstyled mx-3"><a class="text-dark" href="{% url 'add_post' %}">Ajouter</a></li>
+            <li class="list-unstyled mx-3"><a class="text-dark" href="{% url 'logout' %}">Déconnexion</a></li>
+        {% else %}
+            <li class="list-unstyled mx-3"><a class="text-dark" href="{% url 'signup' %}">Inscription</a></li>
+            <li class="list-unstyled mx-3"><a class="text-dark" href="{% url 'login' %}">Connexion</a></li>
+        {% endif %}
+    </nav>
+</header>
