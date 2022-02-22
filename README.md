@@ -1,6 +1,6 @@
 # ProjetDjango
 
-``LienGithub : https://github.com/FERRALI-Mario/ProjetDjang``
+``LienGithub : https://github.com/FERRALI-Mario/ProjetDjango``
 
 Un blog réunissant plusieurs fonctionnalitées
 
